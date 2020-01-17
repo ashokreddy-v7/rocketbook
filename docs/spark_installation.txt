@@ -1,0 +1,34 @@
+
+Title: 
+
+Apache spark standalone mode installation on singgle node 
+
+References: 
+
+Mac - https://www.linkedin.com/pulse/apache-spark-under-hood-part-1-ashok-reddy-vennapusa
+Windows - https://medium.com/@GalarnykMichael/install-spark-on-windows-pyspark-4498a5d8d66c
+
+
+
+High Level Steps:
+
+Install 7 zip if missing : https://www.7-zip.org/download.html
+
+Rest files are available on OneDrive  or you can download: 
+
+Install Java if missing : https://cycorp-my.sharepoint.com/personal/ahok_cypress_com/_layouts/15/onedrive.aspx?id=%2Fpersonal%2Fahok%5Fcypress%5Fcom%2FDocuments%2FINCIDENT%20%23199554
+Install Python 3+ if missing : https://cycorp-my.sharepoint.com/personal/ahok_cypress_com/_layouts/15/onedrive.aspx?id=%2Fpersonal%2Fahok%5Fcypress%5Fcom%2FDocuments%2FINCIDENT%20%23199554
+Install R 3+ if missing: https://cycorp-my.sharepoint.com/personal/ahok_cypress_com/_layouts/15/onedrive.aspx?id=%2Fpersonal%2Fahok%5Fcypress%5Fcom%2FDocuments%2FINCIDENT%20%23199554
+
+
+Set following Varlables:
+
+SPARK_HOME spark-2.1.0-bin-hadoop2.7
+HADOOP_HOME  C:\winutils	
+JAVA_HOME
+Add  spark-2.1.0-bin-hadoop2.7\bin, java, python, R binaries to your path.
+
+Starting Spark:
+
+1. open first command prompt run      : spark-class org.apache.spark.deploy.master.Master
+2. open second command prompt run : spark-class org.apache.spark.deploy.worker.Worker <master url get this from your browser http://localhost:8080/> --cores 4 --memory 4G

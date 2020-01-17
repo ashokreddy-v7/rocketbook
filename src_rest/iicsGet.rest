@@ -1,0 +1,6 @@
+# Get Object Details
+HOW TO GET TASK ID OF IICS TASK
+GET https://use6.dm-us.informaticacloud.com/saas/api/v2/task?type=DRS
+Content-Type: application/json
+Accept: application/json
+icSessionId : 1KYWKNVPEYTil1cxo4x9mb
