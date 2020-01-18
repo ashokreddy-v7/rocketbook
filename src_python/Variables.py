@@ -1,4 +1,4 @@
-# Printing Variables
+# Printing Variables.
 
 # Numbers
 number1 = 200
