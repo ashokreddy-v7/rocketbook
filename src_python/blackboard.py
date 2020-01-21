@@ -110,6 +110,43 @@ class BlackBoard:
                     return False
         return len(stack) == 0
 
+    def removeDups(self,srtLt):
+        for i in range(len(srtLt)-1,0,-1):
+            if srtLt[i]==srtLt[i-1]:
+                del srtLt[i]
+        return len(srtLt)
+    
+    def removeElement(self,lt,val):
+        i=0
+        while i<len(lt):
+            if lt[i]==val:
+                lt.remove(val)
+            else:
+                i=i+1
+        return len(lt)
+    def findNeedle(self,haystack,needle):
+        for i in range(len(haystack)-len(needle)+1):
+            if haystack[i:i+len(needle)]==needle:
+                return i
+        return -1
+
+    def findPosition(self,strLt,target):
+        if len(strLt)==0 or target<strLt[0]:
+            return 0
+        if target>strLt[len(strLt)-1]:
+            return len(strLt)
+        low=0
+        high=len(strLt)
+        while low<high:
+            mid=low+high//2
+            if target>strLt[mid]:
+                low=mid+1
+            else:
+                high=mid
+        return low
+        
+    def countAndSay(self):
+        return 0
 
 obj = BlackBoard()
 # print(obj.add(2,5))
@@ -119,5 +156,8 @@ obj = BlackBoard()
 # print(obj.romantoint("LVIII"))
 # print(obj.listoperations(['a','b','c','d'],'max'))
 # print(obj.longestPrefix(["testomg","test123","testm","rsm"]))
-print(obj.isValidParan("{[]}"))
-print(len([]))
+#print(obj.isValidParan("{[]}"))
+#print(obj.removeElement([0,1,2,2,3,0,4,2],2))
+#print(obj.findNeedle("hello",'o'))
+print(obj.findPosition([1,3,5,6], 10))
+
