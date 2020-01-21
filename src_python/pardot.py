@@ -53,7 +53,7 @@ def loadPardotObj(apiResource,colName,monDb,resArray):
 
 
 if __name__ == "__main__":
-    loadPardotObj('opportunity','pd_opportunities','pardot','opportunity')
+    loadPardotObj('prospectAccount','pd_prospect_accounts','pardot','prospectAccount')
        
     
 # #Load compaigns from pardot.
