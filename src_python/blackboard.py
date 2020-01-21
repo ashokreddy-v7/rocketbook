@@ -145,8 +145,29 @@ class BlackBoard:
                 high=mid
         return low
         
-    def countAndSay(self):
-        return 0
+    def countAndSay(self,num):
+        if num==1:
+            return '1'
+        if num==2:
+            return '11'
+        current='11'
+        for _ in range(1,num-1):
+            count=1
+            newStr=''
+            for j in range(len(current)):
+                if j!=len(current)-1:
+                    if current[j]==current[j+1]:
+                        count=count+1
+                    else:
+                        newStr=newStr+str(count)+current[j]
+                        count=1
+                else:
+                    newStr=newStr+str(count)+current[j]
+                current=newStr
+        return current
+
+
+
 
 obj = BlackBoard()
 # print(obj.add(2,5))
@@ -159,5 +180,6 @@ obj = BlackBoard()
 #print(obj.isValidParan("{[]}"))
 #print(obj.removeElement([0,1,2,2,3,0,4,2],2))
 #print(obj.findNeedle("hello",'o'))
-print(obj.findPosition([1,3,5,6], 10))
+#print(obj.findPosition([1,3,5,6], 10))
+#print(obj.countAndSay(5))
 
